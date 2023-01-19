@@ -1,0 +1,198 @@
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box ;
+}
+body {
+	background-color: #000080;
+	height: 100hv;
+	font-family: arail, sans-serif;
+	font-size: 15px;
+	color: white;
+	
+	}
+	.container {
+		width: 600px;
+		height: 800px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform : translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		}
+	.tools, .stats {
+		width : 500px;
+		height : 100px;
+		display: flex;
+		justify-content: space-evenly;
+		background-color:#0A0909;
+		align-items: center;
+	}
+		.stats {
+			
+	     margin-top: 20px;
+		}
+		
+		.cells {
+			display: flex;
+		}
+		.cell {
+			height: 100px;
+			width: 160px;
+			background : #0A0909;
+			margin: 5px;
+			cursor: pointer;
+			font-size : 5em;
+			font-weight : 500px;
+			align-items: center;
+			justify-content: center;
+			text-align : center;
+			padding : 2px;
+			font-family: robotto, sans-serif;
+			font-weight: 700;
+			display: flex;
+			position: relative;
+			
+			
+			}	
+			
+			.board.x .cell:not(.x):not(.circle):hover::before,
+			.board.x .cell:not(.x):not(.circle):hover::after{
+				background-color: red;
+			}
+			
+			
+			.cell.x::before,
+			.cell.x::after{
+				background-color: yellow;
+			}
+			
+			
+			.cell.x::before,
+			.cell.x::after,
+		    .board.x .cell:not(.x):not(.circle):hover::before,
+			.board.x .cell:not(.x):not(.circle):hover::after{
+			 
+			content: "";
+			width: 20px;
+			height: 80px;
+	
+			position : absolute;
+			}
+			
+			.cell.x::before,
+			.board.x .cell:not(.x):not(.circle):hover::before {
+			
+				transform : rotate(45deg);
+				
+			}
+			.cell.x::after, 
+			.board.x .cell:not(.x):not(.circle):hover::after{
+				transform: rotate(-45deg);
+			}
+			
+			
+			.board.circle .cell:not(.x):not(.circle):hover::before,
+			.board.circle .cell:not(.x):not(.circle):hover::after{
+				background-color: #D2691E;
+			}
+			
+			.cell.circle::before,
+			.cell.circle::after{
+				background-color: white;
+			}
+			
+			
+			
+			.cell.circle::before,
+			.board.circle .cell:not(.x):not(.circle):hover::before{
+				 content:"";
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				border-radius: 50%;
+				}
+				.cell.circle::after,
+				.board.circle .cell:not(.x):not(.circle):hover::after{
+					content:"";
+					width: 50px;
+					height: 50px;
+					background-color: black;
+					position: absolute;
+					border-radius: 50%;
+				}
+				
+				
+					
+			
+			
+			.currentClass, .draws {
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				display: flex;
+				}
+				
+				.stats span {
+					color : yellow;
+					margin-top: 10px;
+					
+				}
+				.stats label {
+					font-size: 20px;
+					font-weight: 800;
+					
+					}
+					.symbols i:nth-child(odd){
+						color : yellow;
+					}
+					.reset {
+						cursor: pointer;
+						
+					}
+					#overlay {
+						position : absloute;
+						width: 	100%;
+						height: 100vh;
+						//display: flex;
+						background-color: #07056A;
+						align-items: center;
+						justify-content: center;
+						text-align: center;
+						z-index: 1;
+						display: none;
+						
+						}
+						
+						#message {
+							position: absolute;
+							width : 100%;
+							height: 30%;
+							min-height: 300px;
+							background-color:#229EEE;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							text-align: center;
+							z-index: 2;
+							border-top: 1px solid #040432;
+							border-bottom: 1px solid #040432;
+							top: 80px;
+							font-size: 2em;
+						//	color: white;
+							
+							}
+							#close {
+								position: absolute;
+								top : 15px;
+								right: 20px;
+								cursor: pointer;
+								
+							}
+							#message h2 { 
+							
+							color: yellow;
+							}
